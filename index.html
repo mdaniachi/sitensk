@@ -9,17 +9,30 @@
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://skillcore.pro/">
 
+<link rel="alternate" hreflang="pt-BR" href="https://skillcore.pro/">
+<link rel="alternate" hreflang="en" href="https://skillcore.pro/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://skillcore.pro/">
+
+<meta name="geo.region" content="BR-PR">
+<meta name="geo.placename" content="Curitiba">
+<meta name="geo.position" content="-25.4284;-49.2733">
+<meta name="ICBM" content="-25.4284, -49.2733">
+
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://skillcore.pro/">
 <meta property="og:title" content="SkillCore | Consultoria Digital AI-Native">
 <meta property="og:description" content="A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial.">
-<meta property="og:image" content="https://skillcore.pro/og-image.jpg">
+<meta property="og:image" content="https://skillcore.pro/assets/images/og-image.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://skillcore.pro/">
 <meta name="twitter:title" content="SkillCore | Consultoria Digital AI-Native">
 <meta name="twitter:description" content="A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial.">
-<meta name="twitter:image" content="https://skillcore.pro/twitter-image.jpg">
+<meta name="twitter:image" content="https://skillcore.pro/assets/images/twitter-image.jpg">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,15 +41,28 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "ProfessionalService",
   "name": "SkillCore",
-  "url": "https://skillcore.pro",
-  "logo": "https://skillcore.pro/logo.png",
+  "image": "https://skillcore.pro/assets/images/og-image.jpg",
+  "@id": "https://skillcore.pro/",
+  "url": "https://skillcore.pro/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -25.4284,
+    "longitude": -49.2733
+  },
   "sameAs": [
     "https://www.linkedin.com/company/skillcore/",
     "https://www.instagram.com/skillcore/"
   ],
-  "description": "Somos arquitetos de experiências conectadas impulsionadas por IA."
+  "description": "A primeira consultoria AI-Native focada em acelerar negócios. Unimos o julgamento de estrategistas seniores à escala infinita da IA.",
+  "priceRange": "$$$"
 }
 </script>
 
@@ -109,20 +135,10 @@ ul { list-style: none; }
 }
 
 /* ─────────────────────────────────────
-   LOADER
-───────────────────────────────────── */
-.loader { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #0A0A0A; color: #fff; z-index: 9999; display: flex; align-items: center; justify-content: center; transition: transform 1s cubic-bezier(0.76, 0, 0.24, 1); }
-.loader.hide { transform: translateY(-100%); }
-.loader-content { text-align: center; overflow: hidden; position: relative; width: 100%; height: 100px; }
-.loader-phrase { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; letter-spacing: -0.02em; color: #86868B; opacity: 0; transform: translateY(20px) translate(-50%, -50%); transition: all 0.6s var(--exp); position: absolute; top: 50%; left: 50%; width: 100%; }
-.loader-phrase.active { opacity: 1; transform: translateY(0) translate(-50%, -50%); }
-.loader-logo { font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #fff; letter-spacing: -0.04em; opacity: 0; transform: translateY(20px) translate(-50%, -50%); position: absolute; top: 50%; left: 50%; transition: all 0.6s var(--exp); }
-.loader-logo.active { opacity: 1; transform: translateY(0) translate(-50%, -50%); }
-
-/* ─────────────────────────────────────
    IMAGEM DEGRADÊ
 ───────────────────────────────────── */
 .gradient-img { width: 100%; height: 100%; object-fit: cover; background: linear-gradient(180deg, #5b7074 0%, #d8e0d0 100%); }
+img.gradient-img { height: 100%; max-width: none; }
 
 /* ─────────────────────────────────────
    NAVEGAÇÃO
@@ -220,7 +236,7 @@ nav {
 .sec-h2 { font-size: var(--fs-h2); max-width: 800px; margin: 0;}
 
 /* ─────────────────────────────────────
-   PROCESS BENTO (NOVO LAYOUT)
+   PROCESS BENTO
 ───────────────────────────────────── */
 .process-bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
 .pb-item { background: var(--bg-card); border-radius: 32px; padding: 48px; border: 1px solid var(--line); display: flex; flex-direction: column; position: relative; overflow: hidden; transition: transform 0.5s var(--exp), box-shadow 0.5s var(--exp);}
@@ -236,11 +252,7 @@ nav {
 .pb-title { font-size: 28px; margin-bottom: 16px; color: var(--text-main); }
 .pb-2 .pb-title { color: var(--invert-text); }
 
-.pb-pills { display: flex; gap: 8px; margin-bottom: auto; flex-wrap: wrap;}
-.pb-pill { font-size: 13px; font-weight: 600; padding: 8px 16px; border-radius: 100px; border: 1px solid var(--line); color: var(--text-main); }
-.pb-pill.dark { background: var(--invert-bg); color: var(--invert-text); border-color: var(--invert-bg); }
-
-.pb-title-huge { font-size: clamp(32px, 4vw, 64px); line-height: 1.05; margin: 40px 0 24px; color: var(--text-main); max-width: 90%; }
+.pb-title-huge { font-size: clamp(32px, 4vw, 64px); line-height: 1.05; margin: 0 0 24px 0; color: var(--text-main); max-width: 90%; }
 .pb-desc-wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-top: auto;}
 .pb-3 .desc-text { max-width: 400px; margin: 0; }
 
@@ -264,14 +276,20 @@ nav {
 
 .bento-icon { width: 48px; height: 48px; border-radius: 12px; background: rgba(29, 29, 31, 0.05); color: var(--text-main); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 24px; }
 [data-theme="dark"] .bento-icon { background: rgba(255, 255, 255, 0.1); }
-.bento-title { font-size: var(--fs-h3); margin-bottom: 12px; color: var(--text-main); }
+.bento-title { font-size: var(--fs-h3); margin-bottom: 12px; color: var(--text-main); line-height: 1.1;}
+
+/* Utilitário para a imagem não empurrar o texto no mobile */
+.has-img-side { padding-right: 48%; }
 
 .bento-img-wrap { margin-top: auto; border-radius: 16px; overflow: hidden; margin-bottom: -20px; margin-left: -20px; margin-right: -20px; height: 260px;}
 .bento-img-side { position: absolute; top: 0; right: 0; bottom: 0; width: 45%; }
 
 .bento-dark { background: var(--invert-bg); color: var(--invert-text); justify-content: center; border-color: transparent;}
-.bento-dark .bento-title { color: var(--invert-text); } /* Ajuste de tamanho da fonte restaurado para o padrao */
+.bento-dark .bento-title { color: var(--invert-text); } 
 .bento-dark .desc-text { color: var(--invert-text); opacity: 0.7; }
+
+.card-link { margin-top: 32px; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; color: var(--or); font-size: 15px; transition: opacity 0.3s; }
+.card-link:hover { opacity: 0.8; }
 
 /* ─────────────────────────────────────
    CASES
@@ -300,12 +318,14 @@ nav {
 .csm-l { font-size: 13px; color: var(--text-muted); font-weight: 500; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 /* ─────────────────────────────────────
-   CAPABILITIES E CLIENTES
+   CAPABILITIES E CLIENTES (COLUNAS DINÂMICAS)
 ───────────────────────────────────── */
 .cap-sec { border-top: 1px solid var(--line); padding-top: 120px; margin-top: 40px;}
-.cap-grid { display: grid; grid-template-columns: 1.5fr 2fr 2fr 1.5fr 2fr 2fr; gap: 32px 16px; }
-.cap-col-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;}
-.cap-list li { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text-main); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.02em; }
+.cap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.cap-block { display: flex; flex-direction: column; }
+.cap-col-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 32px; border-bottom: 1px solid var(--line); padding-bottom: 16px;}
+.split-desktop { column-count: 2; column-gap: 32px; }
+.split-desktop li { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; color: var(--text-main); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.02em; break-inside: avoid;}
 
 /* ─────────────────────────────────────
    CTA FORM
@@ -314,7 +334,6 @@ nav {
 .cta-header { text-align: center; margin-bottom: 64px; }
 .cta-h2 { font-size: clamp(32px, 5vw, 64px); margin-bottom: 24px; color: #fff; }
 .cta-p { font-size: 20px; color: #86868B; max-width: 600px; margin: 0 auto; }
-
 .contact-form { max-width: 560px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
 .form-input { width: 100%; padding: 20px 24px; border-radius: 16px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-family: 'Inter', sans-serif; font-size: 16px; outline: none; transition: all 0.3s; }
 .form-input::placeholder { color: rgba(255,255,255,0.4); }
@@ -328,18 +347,15 @@ nav {
 ───────────────────────────────────── */
 .footer-wrap { background: #0A0A0A; padding: 80px 48px 40px; color: #86868B; border-top: 1px solid rgba(255,255,255,0.1); }
 .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; padding-bottom: 64px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 32px; max-width: 1280px; margin-left: auto; margin-right: auto;}
-
 .footer-brand .n-logo { color: #fff; margin-bottom: 20px; }
 .footer-desc { font-size: 16px; line-height: 1.6; margin-bottom: 32px; max-width: 340px; color: #86868B;}
 .footer-socials { display: flex; gap: 12px; }
 .footer-socials a { width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.2); color: #fff; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
 .footer-socials a:hover { background: #fff; color: #0A0A0A; transform: translateY(-2px);}
-
 .footer-col-title { font-family: 'Space Grotesk', sans-serif; font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 24px; text-transform: uppercase; letter-spacing: 0.06em; }
 .footer-col ul { display: flex; flex-direction: column; gap: 16px; }
 .footer-col a { color: #86868B; transition: color 0.3s; font-size: 15px; font-weight: 500;}
 .footer-col a:hover { color: #fff; }
-
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 14px; max-width: 1280px; margin: 0 auto;}
 .footer-bottom-links { display: flex; gap: 32px; }
 .footer-bottom-links a:hover { color: #fff; }
@@ -374,51 +390,117 @@ nav {
 [data-lang="pt"] .en { display: none; }
 [data-lang="en"] .pt { display: none; }
 
-/* RESPONSIVE */
+/* ─────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────── */
 @media (max-width: 1024px) {
-  .span-8, .span-4, .span-6 { grid-column: span 12; }
+  .has-img-side { padding-right: 48px; }
   .bento-img-side { position: relative; width: 100%; height: 240px; margin-top: 32px; }
   .pb-1, .pb-2, .pb-3 { grid-column: 1 / -1; grid-row: auto; }
   .case-card { grid-template-columns: 1fr; width: 85vw; }
-  .cap-grid { grid-template-columns: 1fr 1fr; }
-  .cap-col-label { grid-column: span 2; margin-top: 24px; }
+  .cap-grid { gap: 40px; }
   .footer-main { grid-template-columns: 1fr 1fr; gap: 48px; }
 }
+
 @media (max-width: 768px) {
   nav { padding: 0 24px; }
-  .n-links { display: none; }
-  .sec { padding: 100px 24px; }
-  .hero { padding: 140px 24px 60px; min-height: auto; }
-  .hero-massive { font-size: clamp(40px, 12vw, 80px); }
-  .showcase-sec { padding: 0 24px; margin-bottom: 80px; }
-  .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 24px; }
-  .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 24px; padding: 0 24px;}
-  .cases-viewport { padding: 20px 24px 40px 24px; }
-  .cs-metrics { flex-wrap: nowrap; gap: 12px; }
-  .bento-item, .pb-item { padding: 32px; }
-  .pb-title-huge { font-size: 36px; }
-  .ai-window { width: calc(100vw - 48px); right: 24px; bottom: 100px;}
-  .hero-bg-shapes { width: 400px; height: 400px; }
-  .ring-1 { width: 150px; height: 150px; }
-  .ring-2 { width: 300px; height: 300px; }
-  .cap-grid { grid-template-columns: 1fr; }
-  .cap-col-label { grid-column: span 1; }
-  .footer-main { grid-template-columns: 1fr; gap: 40px;}
+  
+  /* FLUIDEZ MOBILE: Padding reduzido para imersão total */
+  .sec { padding: 56px 20px; }
+  .sec-header { margin-bottom: 32px; }
+  .hero { padding: 120px 20px 40px; min-height: auto; }
+  .hero-massive { font-size: clamp(36px, 11vw, 56px); margin-bottom: 24px; }
+  .hero-p { font-size: 16px; margin-bottom: 32px;}
+  
+  .showcase-sec { padding: 0 20px; margin-bottom: 40px; }
+  .showcase-wrapper { aspect-ratio: 16 / 10; border-radius: 20px; }
+  
+  .cases-header-wrap { flex-direction: column; align-items: flex-start; gap: 16px; padding: 0 20px;}
+  .cases-viewport { padding: 20px 20px 40px 20px; gap: 16px; }
+  .cs-metrics { flex-wrap: nowrap; gap: 12px; margin-top: 32px; }
+  .cs-body { padding: 40px 24px; }
+  .cs-vis { min-height: 250px; }
+  
+  .ai-window { width: calc(100vw - 40px); right: 20px; bottom: 100px;}
+  .hero-bg-shapes { width: 300px; height: 300px; }
+  .ring-1 { width: 100px; height: 100px; }
+  .ring-2 { width: 200px; height: 200px; }
+  
+  .footer-main { grid-template-columns: 1fr; gap: 40px; padding-bottom: 40px;}
   .footer-bottom { flex-direction: column; gap: 24px; align-items: flex-start; }
+
+  /* ─────────────────────────────────────
+     MÁGICA DO BENTO MOBILE (DENSIDADE APPLE EXTREMA)
+  ───────────────────────────────────── */
+  .bento-grid, .process-bento { 
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 8px !important; 
+  }
+  
+  /* BENTO: PROCESSO */
+  .process-bento .pb-item { padding: 20px; border-radius: 20px; }
+  .pb-1 { grid-column: 1 / 2; grid-row: 1; } /* Quadrado esquerdo */
+  .pb-2 { grid-column: 2 / 3; grid-row: 1; } /* Quadrado direito */
+  .pb-3 { grid-column: 1 / 3; grid-row: 2; } /* Retângulo inferior */
+  .pb-num { margin-bottom: 12px; font-size: 13px; }
+  .pb-title { font-size: 16px; margin-bottom: 8px; line-height: 1.2; }
+  .process-bento .desc-text { font-size: 12px; line-height: 1.35; margin: 0; }
+  .pb-title-huge { font-size: 24px; margin: 12px 0; }
+  .pb-arrow { display: none; } 
+  
+  /* BENTO: QUEM SOMOS (Mantido Wide para o Manifesto) */
+  .sec:nth-of-type(3) .bento-grid { display: flex; flex-direction: column; }
+  .sec:nth-of-type(3) .bento-item { padding: 24px; border-radius: 20px;}
+  .sec:nth-of-type(3) .bento-title { font-size: 24px; margin-bottom: 12px;}
+  .sec:nth-of-type(3) .desc-text { font-size: 15px; line-height: 1.5;}
+
+  /* BENTO: DISCIPLINAS (Estilo Processos) */
+  .sec:nth-of-type(5) .bento-item { 
+    padding: 20px !important; 
+    border-radius: 20px !important;
+    min-height: auto; 
+    justify-content: flex-start;
+  }
+  
+  /* Limpeza do Padding Lateral que amassava o texto */
+  .has-img-side { padding-right: 20px !important; }
+  
+  .sec:nth-of-type(5) .bento-item:nth-child(1) { grid-column: 1 / 3 !important; } /* Wide Top */
+  .sec:nth-of-type(5) .bento-item:nth-child(2) { grid-column: 1 / 2 !important; } /* Square Left */
+  .sec:nth-of-type(5) .bento-item:nth-child(3) { grid-column: 2 / 3 !important; } /* Square Right */
+  .sec:nth-of-type(5) .bento-item:nth-child(4) { grid-column: 1 / 3 !important; } /* Wide Bottom */
+  
+  .sec:nth-of-type(5) .bento-icon { width: 32px; height: 32px; font-size: 16px; margin-bottom: 12px; border-radius: 8px; }
+  .sec:nth-of-type(5) .bento-title { font-size: 16px !important; margin-bottom: 8px; line-height: 1.2; }
+  .sec:nth-of-type(5) .desc-text { 
+    font-size: 12px !important; 
+    line-height: 1.35 !important; 
+    margin: 0 !important;
+    display: block !important; 
+    -webkit-line-clamp: unset !important;
+  }
+  
+  /* Remove imagens e links no mobile para fluidez total */
+  #services .bento-img-side, 
+  #services .bento-img-wrap,
+  #services .card-link { display: none !important; } 
+  
+  /* Ajuste especial para o bloco de Resultados (ROI) caber com elegância */
+  .bento-item.span-6:nth-child(4) > div:last-child { flex-direction: row; align-items: center; gap: 12px; margin-top: 16px; }
+  .bento-item.span-6:nth-child(4) > div:last-child > div:first-child { font-size: 32px; line-height: 1;}
+  .bento-item.span-6:nth-child(4) > div:last-child > div:last-child { font-size: 12px; line-height: 1.2;}
+
+  /* ─────────────────────────────────────
+     CAPABILITIES (COLUNAS DINÂMICAS MOBILE)
+  ───────────────────────────────────── */
+  .cap-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+  .split-desktop { column-count: 1; } /* Empilha a lista em uma única coluna no celular */
+  .cap-col-label { font-size: 11px; margin-bottom: 16px; padding-bottom: 8px;}
+  .cap-list li { font-size: 13px; margin-bottom: 12px; letter-spacing: 0;}
 }
 </style>
 </head>
 <body>
-
-<div class="loader" id="loader">
-  <div class="loader-content" id="loader-content">
-    <div class="loader-phrase pt" id="ph1-pt" aria-hidden="true">Desenhando o futuro</div>
-    <div class="loader-phrase en" id="ph1-en" aria-hidden="true">Designing the future</div>
-    <div class="loader-phrase pt" id="ph2-pt" aria-hidden="true">Engenharia de precisão</div>
-    <div class="loader-phrase en" id="ph2-en" aria-hidden="true">Precision engineering</div>
-    <div class="loader-logo" id="ph3" aria-hidden="true">SkillCore</div>
-  </div>
-</div>
 
 <nav>
   <a href="#" class="n-logo" aria-label="SkillCore Início">
@@ -459,8 +541,8 @@ nav {
         <span class="en">Pull up a chair.<br>Let's design<br>Your tomorrow.</span>
       </h1>
       <p class="hero-p desc-text rv d2">
-        <span class="pt">A SkillCore é a consultoria AI-Native que une o julgamento de designers seniores à escala infinita da inteligência artificial. Transformamos complexidade em velocidade.</span>
-        <span class="en">SkillCore is the AI-Native consultancy that pairs senior designers' judgment with AI's infinite scale. We turn complexity into speed.</span>
+        <span class="pt">Desenhamos experiências conectadas combinando o julgamento crítico de especialistas à escala de execução da inteligência artificial. Somos a agência AI-Native parceira na evolução digital da sua marca.</span>
+        <span class="en">We design connected experiences by combining the critical judgment of experts with the execution scale of artificial intelligence. We are the AI-Native agency partnering in your brand's digital evolution.</span>
       </p>
       <div class="hero-bottom-actions rv d2">
         <a href="#work" class="btn-outline">
@@ -472,7 +554,7 @@ nav {
 
   <section class="showcase-sec rv d2">
     <div class="showcase-wrapper">
-      <div class="gradient-img" aria-hidden="true"></div>
+      <img src="assets/images/hero-team.png" alt="Equipe SkillCore colaborando em projeto" class="gradient-img">
     </div>
   </section>
 
@@ -489,6 +571,9 @@ nav {
     <div class="bento-grid" role="list">
       
       <article class="bento-item span-8 rv" role="listitem">
+        <div class="bento-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        </div>
         <h3 class="bento-title"><span class="pt">Experiências Conectadas</span><span class="en">Connected Experiences</span></h3>
         <p class="desc-text" style="max-width: 90%;"><span class="pt">Somos arquitetos de experiências conectadas. Acreditamos que a verdadeira inovação acontece quando estratégia, design e inteligência artificial falam a mesma língua. Na SkillCore, reimaginamos jornadas e construímos produtos digitais que impulsionam o seu negócio e redefinem o seu mercado.</span><span class="en">We are architects of connected experiences. We believe true innovation happens when strategy, design, and artificial intelligence speak the same language. At SkillCore, we reimagine journeys and build digital products that propel your business and redefine your market.</span></p>
       </article>
@@ -529,13 +614,8 @@ nav {
       </article>
 
       <article class="pb-item pb-3 rv d2" role="listitem">
-        <div class="pb-pills" aria-hidden="true">
-          <span class="pb-pill dark">AI-Native</span>
-          <span class="pb-pill">Automation</span>
-          <span class="pb-pill">Cloud Deploy</span>
-        </div>
         <div>
-          <div class="pb-num" aria-hidden="true" style="margin-top: 40px; margin-bottom: 16px;">03</div>
+          <div class="pb-num" aria-hidden="true">03</div>
           <h3 class="pb-title-huge h-title"><span class="pt">Escala<br>Inteligente</span><span class="en">Smart<br>Scale</span></h3>
         </div>
         <div class="pb-desc-wrap">
@@ -561,44 +641,53 @@ nav {
 
     <div class="bento-grid" role="list">
       
-      <article class="bento-item span-8 rv" role="listitem" style="padding-right: 48%;">
+      <article class="bento-item span-8 rv has-img-side" role="listitem">
         <div class="bento-icon" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
         </div>
-        <h3 class="bento-title"><span class="pt">Assimetria de Velocidade</span><span class="en">Speed Asymmetry</span></h3>
-        <p class="desc-text"><span class="pt">O mercado não tolera ciclos lentos. Reduzimos a distância entre a ideia e o lançamento global através de fluxos de engenharia nativos em IA.</span><span class="en">The market does not tolerate slow cycles. We reduce the distance between the idea and global launch through AI-native engineering flows.</span></p>
+        <h3 class="bento-title"><span class="pt">Engenharia de Produto</span><span class="en">Product Engineering</span></h3>
+        <p class="desc-text"><span class="pt">Desenhamos e construímos plataformas, aplicativos e ecossistemas digitais focados na jornada do usuário. Arquitetura robusta, design intencional e tecnologia de ponta.</span><span class="en">We design and build platforms, applications, and digital ecosystems focused on the user journey. Robust architecture, intentional design, and cutting-edge technology.</span></p>
         <div class="bento-img-side">
-          <div class="gradient-img" aria-hidden="true"></div>
+          <img src="assets/images/card-research.png" alt="Pesquisa e descoberta estratégica" class="gradient-img">
         </div>
       </article>
 
       <article class="bento-item bento-dark span-4 rv d1" role="listitem">
         <div class="bento-icon" aria-hidden="true" style="margin-bottom: auto; background: rgba(255,255,255,0.1); color: #fff;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
         </div>
-        <h3 class="bento-title"><span class="pt">Escala Infinita</span><span class="en">Infinite Scale</span></h3>
-        <p class="desc-text"><span class="pt">Nossa capacidade de entrega não depende de exércitos de pessoas, mas da orquestração inteligente de agentes.</span><span class="en">Our delivery capacity doesn't depend on armies of people, but on the intelligent orchestration of agents.</span></p>
+        <h3 class="bento-title"><span class="pt">IA & Automação</span><span class="en">AI & Automation</span></h3>
+        <p class="desc-text"><span class="pt">Agentes inteligentes e fluxos automatizados integrados ao seu negócio. Escalamos a sua operação eliminando o trabalho braçal.</span><span class="en">Intelligent agents and automated workflows integrated into your business. We scale your operation by eliminating manual work.</span></p>
       </article>
 
       <article class="bento-item span-6 rv d1" role="listitem">
-        <h3 class="bento-title"><span class="pt">Estratégia Senior</span><span class="en">Senior Strategy</span></h3>
-        <p class="desc-text"><span class="pt">O código é gerado, mas o propósito é humano. Cada detalhe é curado por quem entende de produto e mercado.</span><span class="en">The code is generated, but the purpose is human. Every detail is curated by those who understand product and market.</span></p>
+        <div class="bento-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+        </div>
+        <h3 class="bento-title"><span class="pt">Comunicação Digital</span><span class="en">Digital Communication</span></h3>
+        <p class="desc-text"><span class="pt">Campanhas, motion design e posicionamento estratégico. Traduzimos a complexidade do seu produto em mensagens que conectam e convertem.</span><span class="en">Campaigns, motion design, and strategic positioning. We translate the complexity of your product into messages that connect and convert.</span></p>
+        
+        <a href="#process" class="card-link">
+          <span class="pt">Ver portfólio</span><span class="en">View portfolio</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+
         <div class="bento-img-wrap" style="margin-top: 40px;">
-          <div class="gradient-img" aria-hidden="true"></div>
+          <img src="assets/images/card-execution.png" alt="Execução e entrega de projetos" class="gradient-img">
         </div>
       </article>
 
       <article class="bento-item span-6 rv" role="listitem">
         <div class="bento-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
         </div>
-        <h3 class="bento-title"><span class="pt">Zero Atrito</span><span class="en">Zero Friction</span></h3>
-        <p class="desc-text"><span class="pt">Interfaces que parecem mágica por fora, mas são motores de crescimento baseados em dados por dentro.</span><span class="en">Interfaces that look like magic on the outside, but are data-driven growth engines on the inside.</span></p>
+        <h3 class="bento-title"><span class="pt">Growth & Resultados</span><span class="en">Growth & Results</span></h3>
+        <p class="desc-text"><span class="pt">O lançamento é apenas o começo. Monitoramos dados de uso, otimizamos conversões e evoluímos o seu produto para garantir tração contínua.</span><span class="en">Launching is just the beginning. We monitor usage data, optimize conversions, and evolve your product to ensure continuous traction.</span></p>
         <div style="margin-top: auto; display: flex; gap: 16px;">
-          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; line-height: 1; color: var(--text-main); letter-spacing:-0.04em;" aria-hidden="true">100%</div>
+          <div style="font-family: 'Space Grotesk', sans-serif; font-size: 64px; font-weight: 700; line-height: 1; color: var(--text-main); letter-spacing:-0.04em;" aria-hidden="true">ROI</div>
           <div style="font-size: 14px; color: var(--text-muted); font-weight: 500; align-self: center;">
-            <span class="pt">Rastreabilidade<br>e Precisão</span>
-            <span class="en">Traceability<br>and Precision</span>
+            <span class="pt">Métricas de<br>Crescimento</span>
+            <span class="en">Growth<br>Metrics</span>
           </div>
         </div>
       </article>
@@ -719,17 +808,14 @@ nav {
   <section class="sec cap-sec rv" id="capabilities">
     <h2 class="sr-only"><span class="pt">Nossos Serviços e Clientes</span><span class="en">Our Services and Clients</span></h2>
     <div class="cap-grid">
-      <div class="cap-col-label"><span class="pt">Serviços</span><span class="en">Services</span></div>
-      <div class="cap-col">
-        <ul class="cap-list">
+      
+      <div class="cap-block">
+        <div class="cap-col-label"><span class="pt">Serviços</span><span class="en">Services</span></div>
+        <ul class="cap-list split-desktop">
           <li>Estratégia de Produto</li>
           <li>UX/UI Design</li>
           <li>Web & Apps</li>
           <li>Gamificação</li>
-        </ul>
-      </div>
-      <div class="cap-col">
-        <ul class="cap-list">
           <li>IA & Automação</li>
           <li>Design Systems</li>
           <li>Motion Design</li>
@@ -737,22 +823,19 @@ nav {
         </ul>
       </div>
       
-      <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
-      <div class="cap-col">
-        <ul class="cap-list">
+      <div class="cap-block">
+        <div class="cap-col-label"><span class="pt">Clientes Parceiros</span><span class="en">Partner Clients</span></div>
+        <ul class="cap-list split-desktop">
           <li>Novo Nordisk</li>
           <li>Santos FC</li>
           <li>RedBull Bragantino</li>
           <li>Grupo Pão de Açúcar</li>
-        </ul>
-      </div>
-      <div class="cap-col">
-        <ul class="cap-list">
           <li>Dexco</li>
           <li>EPharma</li>
           <li>Nsports</li>
         </ul>
       </div>
+
     </div>
   </section>
 
@@ -863,28 +946,6 @@ nav {
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const currentLang = document.documentElement.getAttribute('data-lang') || 'pt';
-  const ph1 = document.getElementById(`ph1-${currentLang}`);
-  const ph2 = document.getElementById(`ph2-${currentLang}`);
-  const ph3 = document.getElementById('ph3');
-  const loader = document.getElementById('loader');
-  
-  document.body.style.overflow = 'hidden';
-
-  setTimeout(() => { ph1.classList.add('active'); }, 200);
-  setTimeout(() => { ph1.classList.remove('active'); }, 1800);
-  setTimeout(() => { ph2.classList.add('active'); }, 2200);
-  setTimeout(() => { ph2.classList.remove('active'); }, 3800);
-  setTimeout(() => { ph3.classList.add('active'); }, 4200);
-  setTimeout(() => { ph3.classList.remove('active'); }, 5800);
-  
-  setTimeout(() => {
-    loader.classList.add('hide');
-    document.body.style.overflow = 'auto';
-  }, 6400);
-});
-
 function toggleTheme() {
   const html = document.documentElement;
   const currentTheme = html.getAttribute('data-theme');
@@ -904,7 +965,7 @@ function scrollCases(direction) {
   const slider = document.getElementById('casesSlider');
   const card = slider.querySelector('.case-card');
   if(!card) return;
-  const cardWidth = card.offsetWidth + 40; 
+  const cardWidth = card.offsetWidth + 16; 
   slider.scrollBy({ left: direction * cardWidth, behavior: 'smooth' });
 }
 
